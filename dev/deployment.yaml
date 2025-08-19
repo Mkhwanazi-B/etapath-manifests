@@ -13,10 +13,12 @@ spec:
       labels:
         app: etapath
     spec:
+      # change is here:
       imagePullSecrets:
       - name: regcred
       containers:
       - name: etapath-app
+        # The pipeline's change is here:
         image: registry.digitalocean.com/etapath-assessment-registry/etapath-app:fe5b8865363bf1ce0491ac8bb580a2076cc74e92
         ports:
         - containerPort: 80
