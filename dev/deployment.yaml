@@ -13,9 +13,10 @@ spec:
       labels:
         app: etapath
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: etapath-app
-        # This will update this image tag automatically with our CI/CD pipeline
-        image: placeholder-image:latest
+        image: registry.digitalocean.com/etapath-assessment-registry/etapath-app:fe5b8865363bf1ce0491ac8bb580a2076cc74e92
         ports:
         - containerPort: 80
