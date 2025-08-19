@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: etapath-app
+  namespace: devops-assessment-blessing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: etapath
+  template:
+    metadata:
+      labels:
+        app: etapath
+    spec:
+      containers:
+      - name: etapath-app
+        # This will update this image tag automatically with our CI/CD pipeline
+        image: placeholder-image:latest
+        ports:
+        - containerPort: 80

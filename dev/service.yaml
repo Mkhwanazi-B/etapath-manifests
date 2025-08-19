@@ -1,0 +1,15 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: etapath-service
+  namespace: devops-assessment-blessing
+spec:
+  # LoadBalancer will expose my app to http public traffic
+  type: LoadBalancer
+  selector:
+    app: etapath
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
