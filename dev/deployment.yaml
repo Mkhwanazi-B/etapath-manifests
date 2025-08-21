@@ -17,7 +17,7 @@ spec:
       - name: regcred
       containers:
       - name: etapath-app
-        image: registry.digitalocean.com/etapath-assessment-registry/etapath-app:6b99ea08f581761ff074ea33d72234b59ce0d269
+        image: registry.digitalocean.com/etapath-assessment-registry/etapath-app:9f5bcbf636b5de2338a22ee7bd4455689694c377
         ports:
         - containerPort: 80
         env:
