@@ -8,6 +8,9 @@ spec:
   loadBalancerSourceRanges:
   - 0.0.0.0/0
   
+  # This new line fixes the connection refused error
+  externalTrafficPolicy: Local
+
   type: LoadBalancer
   selector:
     app: etapath
