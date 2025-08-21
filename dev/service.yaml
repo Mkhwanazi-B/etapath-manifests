@@ -1,11 +1,13 @@
-# service.yaml
 apiVersion: v1
 kind: Service
 metadata:
   name: etapath-service
   namespace: devops-assessment-blessing
 spec:
-  # LoadBalancer will expose my app to http public traffic
+  # This section fixes the timeout error by opening the firewall
+  loadBalancerSourceRanges:
+  - 0.0.0.0/0
+  
   type: LoadBalancer
   selector:
     app: etapath
