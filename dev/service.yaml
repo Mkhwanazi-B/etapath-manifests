@@ -4,10 +4,9 @@ metadata:
   name: etapath-service
   namespace: devops-assessment-blessing
 spec:
-  # This section fixes the timeout error by opening the firewall
   loadBalancerSourceRanges:
   - 0.0.0.0/0
-  
+
   # This new line fixes the connection refused error
   externalTrafficPolicy: Local
 
