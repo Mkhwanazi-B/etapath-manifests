@@ -5,17 +5,19 @@ metadata:
   namespace: devops-assessment-blessing
   annotations:
     service.beta.kubernetes.io/do-loadbalancer-healthcheck-protocol: "tcp"
+    # The health check must also point to the correct port
     service.beta.kubernetes.io/do-loadbalancer-healthcheck-port: "3000"
 spec:
-  # This new section opens the firewall for the load balancer
   loadBalancerSourceRanges:
   - 0.0.0.0/0
-
+  
   externalTrafficPolicy: Local
   type: LoadBalancer
   selector:
     app: etapath
   ports:
     - protocol: TCP
+      # The public port remains 80
       port: 80
+      # The internal target port is now 3000
       targetPort: 3000
