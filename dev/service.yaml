@@ -5,15 +5,14 @@ metadata:
   namespace: devops-assessment-blessing
   annotations:
     service.beta.kubernetes.io/do-loadbalancer-healthcheck-protocol: "tcp"
-    service.beta.kubernetes.io/do-loadbalancer-healthcheck-port: "3000"
+    service.beta.kubernetes.io/do-loadbalancer-healthcheck-port: "80"
 spec:
-  loadBalancerSourceRanges:
-    - 0.0.0.0/0
-  externalTrafficPolicy: Local
   type: LoadBalancer
+  loadBalancerSourceRanges:
+  - 0.0.0.0/0
   selector:
     app: etapath
   ports:
     - protocol: TCP
-      port: 80           # external port
-      targetPort: 3000   # container port Puma listens on
+      port: 80
+      targetPort: 80
