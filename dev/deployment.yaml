@@ -19,7 +19,7 @@ spec:
       - name: etapath-app
         image: registry.digitalocean.com/etapath-assessment-registry/etapath-app:9f5bcbf636b5de2338a22ee7bd4455689694c377
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         env:
         - name: RAILS_MASTER_KEY
           valueFrom:
